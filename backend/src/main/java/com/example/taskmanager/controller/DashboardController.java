@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.*;
 
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/dashboard")
 @RequiredArgsConstructor
