@@ -50,7 +50,7 @@ public class AuthService {
         User user = repo.findByEmail(email.trim())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        
+
         if (!passwordEncoder.matches(password.trim(), user.getPassword())) {
             throw new RuntimeException("Invalid password");
         }
