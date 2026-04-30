@@ -1,103 +1,163 @@
-# 🚀 Task Manager – Full Stack Application
+TASK MANAGER – FULL STACK APPLICATION
+=====================================
 
+Project Overview
+----------------
+This is a full-stack Task Manager web application that allows users to create, manage, and track tasks with secure authentication and role-based access control. The application is designed to simulate a real-world team collaboration system where Admins can manage projects and Members can manage tasks.
 
+The system is built using React for the frontend and Spring Boot for the backend, with JWT-based authentication and MySQL database integration. The application is fully deployed and accessible online.
 
-A full-stack task management system with secure authentication, role-based access control, and real-time task tracking.
+------------------------------------------------------------
 
----
+Live Application
+----------------
+Frontend (Vercel):
+https://task-manager-beta-pied.vercel.app
 
-## 🌐 Live Demo
+Backend (Railway):
+https://task-manager-production-23d0.up.railway.app
 
-- 🔗 Frontend: https://task-manager-beta-pied.vercel.app  
-- 🔗 Backend: https://task-manager-production-23d0.up.railway.app  
+------------------------------------------------------------
 
----
+Key Features
+------------
+1. User Authentication
+   - Signup and Login functionality
+   - JWT-based secure authentication
+   - Token-based session management
 
-## ✨ Features
+2. Role-Based Access Control
+   - Admin and Member roles
+   - Admin can manage projects
+   - Members can manage tasks only
 
-- 🔐 JWT-based Authentication (Signup/Login)
-- 👥 Role-Based Access (Admin / Member)
-- 📋 Task Management (Create, Update, Track Status)
-- 📊 Dashboard with task status tracking
-- 🔒 Secure REST APIs using Spring Security
-- 🌍 Fully deployed (Frontend + Backend)
+3. Task Management
+   - Create new tasks
+   - View all tasks
+   - Update task status:
+     TODO → IN_PROGRESS → COMPLETED
+   - Real-time status updates
 
----
+4. Dashboard
+   - Displays all tasks
+   - Shows status-based task tracking
 
-## 🛠 Tech Stack
+5. Secure Backend APIs
+   - Spring Security integration
+   - JWT filter for authentication
+   - Protected endpoints
 
-### Frontend
+6. Full Deployment
+   - Frontend deployed using Vercel
+   - Backend deployed using Railway
+   - GitHub-based CI/CD
+
+------------------------------------------------------------
+
+Technology Stack
+----------------
+
+Frontend:
 - React (Vite)
 - JavaScript
 - Tailwind CSS
 
-### Backend
+Backend:
 - Spring Boot
 - Spring Security
-- JWT Authentication
+- JWT (JSON Web Tokens)
 - REST APIs
 
-### Database
-- MySQL (Local)
-- H2 (Production - Railway)
+Database:
+- MySQL (Local Development)
+- H2 Database (Production - Railway)
 
-### Deployment
-- Vercel (Frontend)
-- Railway (Backend)
-
-### Tools
+Tools:
 - Git & GitHub
-- Postman
+- Postman (API testing)
 
----
+Deployment:
+- Railway (Backend Hosting)
+- Vercel (Frontend Hosting)
 
-## 🧱 Project Structure
+------------------------------------------------------------
+
+Project Structure
+-----------------
 
 Task-Manager/
-│
-├── backend/
-│ ├── src/main/java/com/example/taskmanager/
-│ ├── src/main/resources/
-│ └── pom.xml
-│
-├── frontend/
-│ ├── src/
-│ └── package.json
-│
-└── README.md
+|
+|-- backend/
+|   |-- src/main/java/com/example/taskmanager/
+|   |-- src/main/resources/
+|   |-- pom.xml
+|
+|-- frontend/
+|   |-- src/
+|   |-- package.json
+|
+|-- README.md
 
+------------------------------------------------------------
 
----
+How It Works
+------------
 
-## 🔐 Authentication Flow
+1. User Signup/Login
+   - User enters credentials
+   - Backend verifies user
+   - JWT token is generated
 
-1. User logs in → receives JWT token  
-2. Token stored in localStorage  
-3. Token sent in Authorization header  
-4. Backend validates using JWT filter  
+2. Token Storage
+   - Token stored in browser (localStorage)
 
----
+3. API Calls
+   - Frontend sends token in Authorization header
+   - Backend validates token using JWT filter
 
-## 📡 API Endpoints
+4. Role Handling
+   - Backend checks user role (Admin/Member)
+   - Grants or restricts access accordingly
 
-### Auth
-- POST `/api/auth/signup`
-- POST `/api/auth/login`
+------------------------------------------------------------
 
-### Tasks
-- GET `/api/tasks`
-- POST `/api/tasks`
-- PUT `/api/tasks/{id}`
-- DELETE `/api/tasks/{id}`
+API Endpoints
+-------------
 
----
+Authentication:
+- POST /api/auth/signup
+- POST /api/auth/login
 
-## 📸 Screenshots
+Tasks:
+- GET /api/tasks
+- POST /api/tasks
+- PUT /api/tasks/{id}/status
 
-<img width="1906" height="964" alt="image" src="https://github.com/user-attachments/assets/e98631ab-9739-4f17-9c8b-15a32f4ce82f" />
-Login 
-<img width="1914" height="968" alt="image" src="https://github.com/user-attachments/assets/fd6a15b5-e0de-45d0-856c-462ac6ffc2e4" />
-Signup
-<img width="1919" height="892" alt="image" src="https://github.com/user-attachments/assets/74a8da50-26ac-45c9-b50e-352e2a0c335e" />
-Dashboard
+Projects (Admin Only):
+- GET /api/projects
+- POST /api/projects
+- PUT /api/projects/{id}/status
 
+------------------------------------------------------------
+
+Challenges Faced
+----------------
+- Deployment issues with MySQL connection on Railway
+- Fixed by switching to H2 database for production
+- CORS errors between frontend and backend
+- Resolved by configuring backend CORS policy
+
+------------------------------------------------------------
+
+Author
+------
+Harshit Sinha
+GitHub: https://github.com/HarshitSinha090104
+
+------------------------------------------------------------
+
+Conclusion
+----------
+This project demonstrates strong full-stack development skills including frontend development, backend API design, authentication, role-based access control, and cloud deployment. It is designed as a scalable and production-ready application.
+
+------------------------------------------------------------
